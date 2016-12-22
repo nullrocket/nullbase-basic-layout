@@ -40,7 +40,7 @@
     "loader.js": "^4.0.1",
     "lodash": "4.16.4",
     "nullbase-button": "https://github.com/nullrocket/nullbase-button.git#0.0.0-alpha",
-    "nullbase-checkbox":"*"
+    "nullbase-checkbox": "https://github.com/nullrocket/nullbase-checkbox.git#0.0.0-alpha"
   },
   "keywords": [
     "ember-addon"
