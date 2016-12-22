@@ -1,0 +1,1 @@
+export { default } from 'nullbase-basic-layout/components/nullbase-basic-layout';
