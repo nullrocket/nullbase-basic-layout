@@ -25,6 +25,7 @@ export default Ember.Component.extend(ThemedComponent, {
   contentOutletName: "content",
   headerOutletName: "header-content",
   footerOutletName : "footer-content",
+  gestures:Ember.inject.service(),
 
   init(){
     this._super(...arguments);
@@ -45,7 +46,11 @@ export default Ember.Component.extend(ThemedComponent, {
 
   }),
 
-
+  actions :{
+    leftPlaceholderTap(){
+      this.sendAction('attrs.on-left-placeholder-tap', ...arguments);
+    }
+  },
 
 
   _themeProps: null,
@@ -56,5 +61,19 @@ export default Ember.Component.extend(ThemedComponent, {
       'attrs.left-sidebar-background-color'
 
   ],
+  didInsertElement(){
+    let self = this;
+    this._tap = function ( event ) {
+      event.preventDefault();
+      event.stopPropagation();
+
+        self.send("leftPlaceholderTap", event);
+
+    };
+
+    var leftPlaceholderElement = this.$('.left-wrapper .placeholder').get(0);
+    this.get('gestures').addEventListener(leftPlaceholderElement, 'tap', this._tap);
+
+  }
 
 });
