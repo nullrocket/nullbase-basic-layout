@@ -1,6 +1,6 @@
 {
   "name": "nullbase-basic-layout",
-  "version": "0.0.4-alpha",
+  "version": "0.0.5-alpha",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -40,8 +40,8 @@
     "ember-route-action-helper": "2.0.0",
     "loader.js": "^4.0.1",
     "lodash": "4.16.4",
-    "nullbase-button": "https://github.com/nullrocket/nullbase-button.git#0.0.0-alpha",
-    "nullbase-checkbox": "https://github.com/nullrocket/nullbase-checkbox.git#0.0.0-alpha",
+    "nullbase-button": "https://github.com/nullrocket/nullbase-button.git",
+    "nullbase-checkbox": "https://github.com/nullrocket/nullbase-checkbox.git",
     "require-reload": "^0.2.2",
     "ember-source": "^2.11.0-beta.2"
   },
