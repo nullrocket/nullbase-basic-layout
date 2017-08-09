@@ -10,5 +10,6 @@ export default Ember.Service.extend({
   floatNestedRightSidebar:false,
   fullHeightNestedRightSidebar:false,
   isNestedFooterShowing:false,
-  isNestedHeaderShowing:true
+  isNestedHeaderShowing:true,
+  isNestedLeftRailShowing:true
 });

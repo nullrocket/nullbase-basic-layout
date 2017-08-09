@@ -36,6 +36,9 @@ export default Ember.Route.extend({
 
       this.set('appState.isNestedFooterShowing',!this.get('appState.isNestedFooterShowing'));
     },
+    toggleNestedLeftRail(){
+      this.set('appState.isNestedLeftRailShowing',!this.get('appState.isNestedLeftRailShowing'));
+    },
     showSnackbar(message){
       this.get("snackbar").showSnackbar("TEST");
   }

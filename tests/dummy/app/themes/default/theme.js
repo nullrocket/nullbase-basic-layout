@@ -8,7 +8,7 @@ export default {
 
       },
       'right-sidebar-width': "500px",
-      'left-sidebar-width': "240px"
+      'left-sidebar-width': "500px"
     }
 
 

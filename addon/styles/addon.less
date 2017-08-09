@@ -24,6 +24,28 @@ html {
   top: 0px;
   bottom: 0px;
   overflow: hidden;
+  .left-rail-navigation {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    width: 64px;
+    bottom: 0px;
+    background: #ddd;
+
+
+    will-change: width, top, bottom;
+    transition-property: bottom, top, left, right, width;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    top:64px;
+    > .inner {
+      width: 64px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
+  }
 
   .left-wrapper {
     position: absolute;
@@ -37,8 +59,66 @@ html {
     flex-wrap: nowrap;
     align-items: stretch;
     pointer-events: none;
+    will-change: width, top, bottom;
+    transition-property: bottom, top, left, right, width;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  &.lrns {
+    .left-wrapper,.right-wrapper,.center-wrapper {
+    left:64px;
+    }
+    .left-rail-navigation {
+      left:0px;
+    }
+    &.lsf {
+      .left-wrapper,.right-wrapper,.center-wrapper {
+        left:0px;
+      }
+    }
   }
 
+  &.lrns.lsfh {
+    &.lso {
+
+
+      .left-rail-navigation {
+        top: 0px;
+      }
+
+      .header {
+        left:300px;
+      }
+      .footer {
+        left:300px;
+      }
+    }
+    &.lsc {
+      &.fo {
+        bottom:64px;
+      }
+      .left-rail-navigation {
+        top: 64px;
+
+      }
+    }
+  }
+  &.lrns.lsch {
+    &.fo {
+      .left-rail-navigation {
+        bottom: 64px;
+      }
+    }
+  }
+  &.lrnh {
+    .left-wrapper,.right-wrapper,.center-wrapper {
+      left:0px;
+
+    }
+    .left-rail-navigation {
+      left:-64px;
+    }
+  }
 
   .right-wrapper {
     position: absolute;
@@ -52,6 +132,10 @@ html {
     flex-wrap: nowrap;
     align-items: stretch;
     pointer-events: none;
+    will-change: width, top, bottom;
+    transition-property: bottom, top, left, right, width;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 
   }
 
@@ -68,6 +152,10 @@ html {
     flex-wrap: nowrap;
     align-items: stretch;
     pointer-events: none;
+    will-change: width, top, bottom;
+    transition-property: bottom, top, left, right, width;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 
   }
 

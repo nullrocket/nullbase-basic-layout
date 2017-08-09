@@ -17,6 +17,7 @@ export default Ember.Component.extend(ThemedComponent, {
   fullHeightRightSidebar: false,
   footerShowing: false,
   headerShowing:true,
+  leftRailNavigationShowing:true,
   type: 'standard',
   leftSidebarWidth: 300,
   leftSidebarOutletName: "left-sidebar",
@@ -25,13 +26,14 @@ export default Ember.Component.extend(ThemedComponent, {
   contentOutletName: "content",
   headerOutletName: "header-content",
   footerOutletName : "footer-content",
+  leftRailNavigationOutletName:"left-rail-content",
   gestures:Ember.inject.service(),
 
   init(){
     this._super(...arguments);
   },
 
-  stateClass : Ember.computed('isLeftSidebarOpen','isRightSidebarOpen','floatRightSidebar','fullHeightRightSidebar', 'floatLeftSidebar', 'fullHeightLeftSidebar','footerShowing', 'headerShowing','snackbar.showing',function () {
+  stateClass : Ember.computed('isLeftSidebarOpen','isRightSidebarOpen','floatRightSidebar','fullHeightRightSidebar', 'floatLeftSidebar', 'fullHeightLeftSidebar','footerShowing', 'headerShowing','snackbar.showing',"leftRailNavigationShowing",function () {
 
     let leftSidebarPinnedState = this.get('floatLeftSidebar') ? 'lsf' : 'lsp';
     let leftSidebarHeightState =  this.get('fullHeightLeftSidebar') ?'lsfh': 'lsch';
@@ -42,7 +44,8 @@ export default Ember.Component.extend(ThemedComponent, {
     let headerState = this.get('headerShowing') ?'ho':'hc';
     let footerState = this.get('footerShowing') ?'fo':'fc';
     let snackbarState = this.get('snackbar.showing') ? "sbo":'';
-    return [ leftSidebarPinnedState,leftSidebarHeightState,rightSidebarPinnedState,leftSidebarOpenState,rightSidebarHeightState,rightSidebarOpenState,headerState,footerState,snackbarState].sort().join(" ");
+    let leftRailNavigationState = this.get('leftRailNavigationShowing')?'lrns':'lrnh';
+    return [ leftSidebarPinnedState,leftSidebarHeightState,rightSidebarPinnedState,leftSidebarOpenState,rightSidebarHeightState,rightSidebarOpenState,headerState,footerState,snackbarState,leftRailNavigationState].sort().join(" ");
 
   }),
 

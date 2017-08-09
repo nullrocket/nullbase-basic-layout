@@ -18,7 +18,10 @@
 
               {{nb-checkbox label="Show Header" checked=appState.isNestedHeaderShowing on-tap=(route-action "toggleNestedHeader") }}
               {{nb-checkbox label="Show Footer" checked=appState.isNestedFooterShowing on-tap=(route-action "toggleNestedFooter") }}
-              {{nb-button type="flat-text" text="show snackbar" on-tap=(route-action "showSnackbar")}}
+                {{nb-checkbox label="Show Left Rail" checked=appState.isNestedLeftRailShowing on-tap=(route-action "toggleNestedLeftRail") }}
+            </div>
+            <div>
+                {{nb-button type="flat-text" text="show snackbar" on-tap=(route-action "showSnackbar")}}
             </div>
         </div>
 
@@ -37,6 +40,7 @@
       fullHeightRightSidebar=appState.fullHeightNestedRightSidebar
       headerShowing = appState.isNestedHeaderShowing
       footerShowing = appState.isNestedFooterShowing
+          leftRailNavigationShowing= appState.isNestedLeftRailShowing
       snackbarShowing= true
       on-left-placeholder-tap=(route-action "toggleNestedLeftSidebar")
 
